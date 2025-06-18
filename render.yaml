@@ -3,5 +3,8 @@ services:
     name: audio-merger-service
     env: python
     plan: free
+    build:
+      apt:
+        - ffmpeg
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
